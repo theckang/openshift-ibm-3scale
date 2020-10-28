@@ -115,8 +115,7 @@ The cluster needs credentials to pull images from registry.redhat.io.  By defaul
   ! error: Import failed (InternalError): Internal error occurred: registry.redhat.io/3scale-amp2/apicast-gateway-rhel8@sha256:59d53166fd14e52a5da46e215fbe731796accfd6b98efdbd093ee45604e8e0a9: Get https://registry.redhat.io/v2/3scale-amp2/apicast-gateway-rhel8/manifests/sha256:59d53166fd14e52a5da46e215fbe731796accfd6b98efdbd093ee45604e8e0a9: unauthorized: Please login to the Red Hat Registry using your Customer Portal credentials. Further instructions can be found here: https://access.redhat.com/RegistryAuthentication
 ```
 
-
-3. Custom Storage Class
+2. Custom Storage Class
 
 The `system` component of 3scale requires access to shared file storage with RWX access.  OpenShift on IBM Cloud offers a storage class with RWX access called `ibmc-file-bronze`.  However, only root containers can write to this file storage type.  In OpenShift, containers are disallowed from running as root by default.  To fix this issue, you must create a custom storage class in OpenShift on IBM Cloud with a GID that allows non-root containers to write to the file storage.
 
