@@ -2,7 +2,7 @@ apiVersion: apps.3scale.net/v1alpha1
 kind: APIManager
 metadata:
   name: apimanager
-  namespace: api-test
+  namespace: sample    # replace me
 spec:
   resourceRequirementsEnabled: true
   monitoring:
@@ -20,4 +20,6 @@ spec:
   backend:
     redisPersistentVolumeClaim:
       storageClassName: ibmc-block-bronze
-  wildcardDomain: apps.mycluster.tckang.com	# replace me
+  wildcardDomain: apps.mycluster.tckang.com   # replace me
+
+  
